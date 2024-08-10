@@ -1,0 +1,14 @@
+{
+    "clientName": "Thunder Client",
+    "environmentName": "restaurant-env",
+    "environmentId": "410b4444-5876-44f9-9451-acfed6db415e",
+    "dateExported": "2024-08-10T15:59:09.820Z",
+    "version": "1.2",
+    "variables": [
+        {
+            "name": "url",
+            "value": "http://0.0.0.0:9000"
+        }
+    ],
+    "ref": "rYrCjTp0rBiaCPOoeDbgbCY5OXO6ItVEQQQhKfppLcxumgaGdhr4kVZtbXjEzI8N"
+}

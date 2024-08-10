@@ -1,0 +1,148 @@
+{
+    "info": {
+        "_postman_id": "e2660f74-f71f-4007-a3a3-9e758dd61197",
+        "name": "restaurant",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "create-order",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "{{url}}/orders",
+                    "path": [
+                        "orders"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"customerName\": \"Ahmed\",\n  \"customerMobile\": \"+201060593675\",\n  \"totalPrice\": 140,\n  \"orderItems\": [{\n    \"itemID\": \"66b635720f26eb9f083b970c\",\n    \"quantity\": 2\n  },{\n    \"itemID\": \"66b635720f26eb9f083b970e\",\n    \"quantity\": 1\n  },{\n    \"itemID\": \"66b635720f26eb9f083b970f\",\n    \"quantity\": 1\n  },{\n    \"itemID\": \"66b635720f26eb9f083b9710\",\n    \"quantity\": 1\n  },{\n    \"itemID\": \"66b635720f26eb9f083b9711\",\n    \"quantity\": 1\n  }]\n}"
+                }
+            }
+        },
+        {
+            "name": "list-orders",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{url}}/orders",
+                    "path": [
+                        "orders"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"page\": 1,\n  \"pageSize\": 10\n}"
+                }
+            }
+        },
+        {
+            "name": "get-order",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{url}}/orders/66b637a189147752b161d3bd",
+                    "path": [
+                        "orders",
+                        "66b637a189147752b161d3bd"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "update-order",
+            "request": {
+                "method": "PUT",
+                "url": {
+                    "raw": "{{url}}/orders/66b637a189147752b161d3bd",
+                    "path": [
+                        "orders",
+                        "66b637a189147752b161d3bd"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"customerName\": \"Ahmed\",\n  \"customerMobile\": \"+201060593675\",\n  \"totalPrice\": 40,\n  \"orderItems\": [{\n    \"itemID\": \"66b635720f26eb9f083b970c\",\n    \"quantity\": 2\n  }, {\n    \"itemID\": \"66b635720f26eb9f083b970d\",\n    \"quantity\": 1\n  }]\n}"
+                }
+            }
+        },
+        {
+            "name": "daily-report",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{url}}/orders/daily-report",
+                    "path": [
+                        "orders",
+                        "daily-report"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"day\": \"2024-08-09\",\n  \"timezoneOffset\": 0\n}"
+                }
+            }
+        },
+        {
+            "name": "list-menu",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "{{url}}/menu-items",
+                    "path": [
+                        "menu-items"
+                    ],
+                    "host": [
+                        "{{url}}"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"page\": 1,\n  \"pageSize\": 10\n}"
+                }
+            }
+        }
+    ]
+}

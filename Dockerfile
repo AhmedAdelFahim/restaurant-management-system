@@ -1,4 +1,4 @@
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app/temp
 
@@ -9,7 +9,7 @@ RUN npm ci
 COPY . /app/temp/
 RUN npm run build && npm prune --production
 
-FROM node:18-alpine as production
+FROM node:20-alpine as production
 WORKDIR /app/dist
 
 COPY  --from=0 /app/temp/dist /app/dist 
