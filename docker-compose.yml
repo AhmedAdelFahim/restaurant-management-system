@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  restaurant_db:
+    image: mongo
+    restart: always
+    ports:
+      - 27070:27017
+    volumes:
+      - restaurant_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+
+  restaurant_redis:
+    container_name: restaurant_redis
+    restart: always
+    image: redis:latest
+    ports: 
+      - 6363:6379
+    volumes:
+      - restaurant_redis:/data
+
+  restaurant_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 9001:9001
+    environment:
+      - DB_URL=mongodb://root:root@restaurant_db:27017/restaurant_db_2
+      - PORT=9001
+      - REDIS_URL=redis://restaurant_redis:6379
+volumes:
+  restaurant_data:
+  restaurant_redis:
