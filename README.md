@@ -16,3 +16,9 @@ $ docker-compose up --build
 $ docker-compose exec restaurant_app npm run seed
 # you can use postman file in repo to test app
 ```
+## Built with
+* [unified-errors-handler](https://github.com/AhmedAdelFahim/unified-errors-handler) (my own package to handle errors you can check it)
+* nestjs
+* mongoDB
+* redis
+
